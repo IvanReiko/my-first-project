@@ -12,6 +12,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { ViewComponent } from './components/detail/view/view.component';
 import { FormComponent } from './components/form/form.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardGuard } from './dashboard.guard';
+import {ExitDashboardGuard} from './exit.dashboard.guard';
 
 @NgModule({
   declarations: [
@@ -22,15 +25,16 @@ import { FormComponent } from './components/form/form.component';
     SuportComponent,
     LoginComponent,
     ViewComponent,
-    FormComponent
+    FormComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
+  providers: [DashboardGuard, ExitDashboardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,18 @@
-<p>view works! {{department_id}} {{department_price}}</p>
+
+<div class="card-deck mb-3 text-center">
+    <div *ngFor="let opt of info" class="card mb-4 shadow-sm">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">{{opt.name}} {{opt.user}}</h4>
+        </div>
+        <div class="card-body">
+            {{opt.text}}
+
+        </div>
+
+        <div class="card-body">
+            <b>Price:  {{opt.price}}$</b>
+
+        </div>
+    </div>
+</div>
+
